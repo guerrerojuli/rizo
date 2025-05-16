@@ -1,33 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# rizo: An RSS Feed Application
+
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app), enhanced with several modern technologies to create a robust RSS feed application.
+
+## Project Overview
+
+Rizo is an application designed to fetch, parse, and display RSS feeds, providing a streamlined reading experience. It utilizes Drizzle ORM for database interactions, potentially with a PostgreSQL backend, and incorporates user authentication.
+
+## Tech Stack
+
+*   **Framework**: [Next.js](https://nextjs.org/) (with Turbopack)
+*   **Language**: [TypeScript](https://www.typescriptlang.org/)
+*   **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+*   **UI Components**: [@headlessui/react](https://headlessui.com/), [@heroicons/react](https://heroicons.com/)
+*   **ORM**: [Drizzle ORM](https://orm.drizzle.team/) (with `drizzle-kit` for migrations)
+*   **Database**: Likely PostgreSQL (inferred from `postgres` package)
+*   **Authentication**: `better-auth`
+*   **RSS Parsing**: `rss-parser`
+*   **Linting**: [ESLint](https://eslint.org/)
+*   **Package Manager**: [pnpm](https://pnpm.io/)
 
 ## Getting Started
 
-First, run the development server:
+First, set up your environment variables. This project uses `dotenv`, so create a `.env` file based on `.env.example` (if available) or configure the necessary variables for database connection, authentication, etc.
+
+Then, install dependencies:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
 ```
+
+Next, run the development server:
+
+```bash
+pnpm dev
+```
+This command starts the Next.js development server with Turbopack enabled.
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+You can start editing the page by modifying `src/app/page.tsx` (assuming App Router usage). The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Other Available Scripts
+
+*   **Build for production**:
+    ```bash
+    pnpm build
+    ```
+*   **Start production server**:
+    ```bash
+    pnpm start
+    ```
+*   **Lint project files**:
+    ```bash
+    pnpm lint
+    ```
+
+### Database Migrations
+
+This project uses Drizzle ORM. To manage database schemas and migrations, you will use `drizzle-kit`. Refer to the [Drizzle Kit documentation](https://orm.drizzle.team/kit-docs/overview) for commands related to generating and applying migrations. Common commands might look like:
+```bash
+# Generate SQL migration files (example)
+pnpm drizzle-kit generate
+
+# Apply migrations to the database (example)
+pnpm drizzle-kit migrate
+```
+Ensure your database connection string is correctly configured in your environment variables and `drizzle.config.ts`.
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+To learn more about the core technologies used in this project, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+*   [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+*   [Drizzle ORM Documentation](https://orm.drizzle.team/docs/overview) - learn about Drizzle ORM.
+*   [Tailwind CSS Documentation](https://tailwindcss.com/docs) - learn about Tailwind CSS.
+*   [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) and [the Drizzle ORM GitHub repository](https://github.com/drizzle-team/drizzle-orm).
 
 ## Deploy on Vercel
 
