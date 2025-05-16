@@ -1,4 +1,4 @@
-# rizo: An RSS Feed Application
+# Rizo: An RSS Feed Application
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app), enhanced with several modern technologies to create a robust RSS feed application.
 
